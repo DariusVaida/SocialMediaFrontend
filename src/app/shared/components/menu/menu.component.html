@@ -1,0 +1,9 @@
+<div *ngIf="showMenu" class="absolute top-0 left-0 flex flex-col w-96 h-screen bg-secondary text-left space-y-6 pt-24 pl-28">
+  <app-button *ngIf="!isAdmin" [label]="'HOME'" (press)="toHome()"></app-button>
+  <app-button *ngIf="isAdmin" [label]="'CHECK'" (press)="toCheck()"></app-button>
+  <app-button *ngIf="!isAdmin" [label]="'PROFILE'" (press)="toProfile()"></app-button>
+  <app-button *ngIf="!isAdmin" [label]="'FEED'" (press)="toArchive()"></app-button>
+  <app-button *ngIf="!isAdmin" [label]="'SIGN-UP'" (press)="toSignUp()"></app-button>
+  <app-button *ngIf="!isAdmin" [label]="'LOG IN'" (press)="toLogIn()"></app-button>
+  <app-button [label]="'LOG OUT'" (press)="toLogOut()" class="flex h-full justify-end items-end pb-8 mr-6"></app-button>
+</div>

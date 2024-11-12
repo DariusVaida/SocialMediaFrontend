@@ -1,0 +1,30 @@
+<div class="static flex h-screen flex-col bg-transparent overflow-y-auto overflow-x-hidden">
+  <app-header></app-header>
+  <div class="flex flex-col">
+    <div class="flex justify-center mt-36 mb-52">
+      <img src="/assets/images/landscape.jpg" alt="image" class=" h-full w-4/6">
+    </div>
+    <div class="flex flex-row">
+      <div class="flex w-1/2 justify-items-start mt-4">
+        <img src="/assets/images/water.jpg" alt="image" class="h-full">
+      </div>
+      <app-front-page class="w-full"></app-front-page>
+    </div>
+    <div class="flex justify-center mb-4 w-full">
+      <img src="/assets/images/huge-landscape.jpg" alt="image" class="h-[400px] w-full">
+    </div>
+    <app-collection></app-collection>
+    <div class="w-full grid grid-cols-4 gap-6 align-center ml-2 px-32">
+      <div *ngFor="let item of Collections">
+        <p class="font-montserrat-light">0{{ item.index }}</p>
+        <div class="container h-96 w-72">
+          <img src="{{ item.frontImageLink }}" alt="image" class="h-full w-full">
+          <div class="overlay flex items-center">
+            <div class="flex w-full justify-center text-2xl font-montserrat-bold">{{ item.description }}</div>
+          </div>
+        </div>
+        <p class="font-montserrat-bold">{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

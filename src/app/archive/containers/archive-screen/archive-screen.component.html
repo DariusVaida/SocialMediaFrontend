@@ -1,0 +1,28 @@
+<div *ngIf="!loading" class="static flex h-screen flex-col bg-transparent overflow-auto">
+  <div class="w-full flex flex-col justify-center items-center mt-10 mb-12">
+    <h1 class="font-montserrat-bold text-6xl text-accent-dark mt-6">Feed</h1>
+  </div>
+  <div class="w-full mb-10">
+    <div *ngIf="showAll; else showLiked">
+      <app-button *ngIf="isAuthenticated" class="absolute right-10 top-0 mat-mdc-button"
+                  [label]="'See liked'"
+                  (press)="showLikedImages()">
+      </app-button>
+      <app-all-images class="grid grid-cols-4 gap-4 items-center ml-10"
+                      *ngIf="showAll"
+                      [posts]="posts"
+                      [isAuthenticated]="isAuthenticated"
+                      (press)="changeHeart($event)">
+      </app-all-images>
+    </div>
+    <ng-template #showLiked>
+      <app-button *ngIf="isAuthenticated" class="absolute right-10 top-0 mat-mdc-button"
+                  [label]="'See all'"
+                  (press)="showLikedImages()">
+      </app-button>
+      <app-liked-images class="grid grid-cols-4 gap-4 items-center ml-10"
+                        [posts]="likedPosts">
+      </app-liked-images>
+    </ng-template>
+  </div>
+</div>

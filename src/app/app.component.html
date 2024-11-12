@@ -1,0 +1,6 @@
+<app-button class="absolute top-0 left-0" [label]="'MENU'" (press)="openMenu()"></app-button>
+<app-menu
+  *ngIf="showMenu"
+  [isAdmin]="isAdmin!"
+></app-menu>
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.mat-mdc-button:not(:disabled) {
+  background-color: #994b00 !important;
+  border-radius: 20px;
+  width: 170px;
+  margin-top: 30px;
+}
+
+.custom-file-upload input[type='file'] {
+  display: none; /* Hide the default file input */
+}
+
+.custom-file-upload label {
+  font-family: montserrat, serif;
+  font-size: 20px;
+  background-color: #994b00 !important;
+  border-radius: 20px;
+  width: 170px;
+  padding: 10px 15px;
+  cursor: pointer;
+}

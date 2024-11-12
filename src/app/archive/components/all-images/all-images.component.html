@@ -1,0 +1,12 @@
+<div *ngFor="let post of posts" class="post">
+  <div class="image-container">
+    <img [src]="post.image?.data" [alt]="post.image?.name" width="260" height="250" />
+  </div>
+  <div class="post-details">
+    <h2>{{ post.name }}</h2>
+    <p>{{ post.description }}</p>
+  </div>
+  <div *ngIf="isAuthenticated">
+    <mat-icon (click)="onPress(post)" svgIcon="heart-full"></mat-icon>
+  </div>
+</div>

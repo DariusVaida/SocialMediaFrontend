@@ -1,0 +1,21 @@
+<div class="static w-full h-screen bg-white flex justify-center flex-col items-center">
+  <div class="flex w-[70%] h-[85%] ml-10 mt-10 rounded-lg bg-secondary bg-opacity-25 justify-center">
+    <div class="w-[50%] h-full flex justify-center mr-10">
+      <img src="/assets/images/sign-up.jpg" alt="image" class="rounded-l-lg">
+    </div>
+    <div class="mt-4 w-[50%] flex flex-col justify-center overflow-auto hide">
+      <h1 class="font-montserrat-bold text-8xl text-accent-dark mt-6">Sign up</h1>
+      <div class="h-[40%] grid grid-cols-1 grid-flow-row mt-8">
+        <form [formGroup]="userForm">
+          <input [placeholder]="'Username'" name="name" formControlName="username" title="Username">
+          <input [placeholder]="'Email'" name="email" formControlName="email">
+          <input [placeholder]="'Password'" [type]="password" name="password" formControlName="password">
+        </form>
+      </div>
+      <div class="w-[80%] flex justify-between">
+        <app-button [label]="'Create account'" (press)="goToSuccess()" class="mat-mdc-button"></app-button>
+        <app-button [label]="'Go to login'" (press)="goToLogin()" class="mat-mdc-button"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

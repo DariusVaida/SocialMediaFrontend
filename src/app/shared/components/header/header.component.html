@@ -1,0 +1,5 @@
+<div class="flex flex-row w-full bg-transparent justify-center">
+  <app-button class="absolute top-0 left-0" [label]="'MENU'" (press)="openMenu()"></app-button>
+  <app-menu *ngIf="showMenu"></app-menu>
+  <p class="font-montserrat-bold text-9xl text-accent-dark mt-6">Photo Gallery</p>
+</div>

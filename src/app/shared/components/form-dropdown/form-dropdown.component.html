@@ -1,0 +1,9 @@
+<p>{{ inputTitle }} *</p>
+<mat-form-field appearance="outline">
+  <mat-select
+    [formControl]="selection"
+    (selectionChange)="changeItem()"
+    placeholder="{{ placeholder }}">
+    <mat-option *ngFor="let x of list" value="{{ x }}">{{ x }}</mat-option>
+  </mat-select>
+</mat-form-field>

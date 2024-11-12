@@ -1,0 +1,24 @@
+<div *ngIf="!loading" class="static flex h-screen flex-col bg-transparent overflow-auto">
+  <div class="w-full flex flex-col justify-center items-center mt-10 mb-10">
+    <h1 class="font-montserrat-bold text-6xl text-accent-dark mt-6">Check uploaded photos</h1>
+  </div>
+  <div *ngIf="posts.length > 0; else noPosts" class="w-full mb-10">
+    <div class="grid grid-cols-4 gap-4 items-center ml-10">
+      <div *ngFor="let post of posts" class="post-container">
+        <div class="image-container">
+          <img [src]="post.image?.data" [alt]="post.image?.name" width="260" height="250" />
+        </div>
+        <div class="post-details">
+          <h2>{{ post.name }}</h2>
+          <p>{{ post.description }}</p>
+            <button (click)="deletePost(post)">Delete</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noPosts>
+    <div class="w-full flex flex-col justify-center items-center mt-10 mb-10">
+      <p class="font-montserrat-bold text-xl text-accent-dark mt-6">There are no posts uploaded.</p>
+    </div>
+  </ng-template>
+</div>

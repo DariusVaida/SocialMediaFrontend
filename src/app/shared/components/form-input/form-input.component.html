@@ -1,0 +1,8 @@
+<p>{{ inputTitle }} *</p>
+<mat-form-field appearance="outline" [formGroup]="form">
+  <input matInput
+         [type]="fieldTextType ? 'text' : 'password'"
+         name="{{ formControlName }}"
+         formControlName="{{ formControlName }}"
+         [placeholder]="placeholder">
+</mat-form-field>
